@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour {
 
     //Singleton Setup
     public static GameManager instance = null;
+    public float xBoundary = 30;
+    public float zBoundary = 30;
+    public GameObject Player;
 
     // Awake Checks - Singleton setup
     void Awake() {
