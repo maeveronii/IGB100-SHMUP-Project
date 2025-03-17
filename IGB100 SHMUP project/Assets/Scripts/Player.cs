@@ -10,7 +10,8 @@ using Quaternion = UnityEngine.Quaternion;
 public class Player : MonoBehaviour
 {
     //stats
-    public float moveSpeed = 100f;
+    public float moveSpeed = 1000f; 
+    public float maxHealth = 250f;
     public float health = 250f;
     public float attack = 10f;
     public float attackSpeed = 5f;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     public TakeDamagePostProccessing postProcess;
     public TakeDamageCamera shakeScreen;
     public ExperienceManager experienceManag;
+    public PlayerHealth healthManag;
 
 
     // Start is called before the first frame update
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour
     {   
         gameBoundary();
         Shoot();
+        healthManag.updateHealth(health, maxHealth);
     }
 
     void FixedUpdate()
@@ -85,6 +88,7 @@ public class Player : MonoBehaviour
         postProcess.StartCoroutine("takeDamageEffect");
         shakeScreen.StartCoroutine("takeDamageShake");
         health -= damage;
+        healthManag.takeDamage(health, maxHealth);
 
         if(health <= 0)
         {

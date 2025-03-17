@@ -3,14 +3,17 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Detonator
     - Enemy
+    - EnemySpawner
     - ExperienceManager
     - GameManager
     - Parts
     - Player
+    - PlayerHealth
     - Projectile
     - RotateSkyBox
     - TakeDamageCamera
     - TakeDamagePostProccessing
+    - UpgradeManager
     Unity.Postprocessing.Runtime.dll:
     - UnityEngine.Rendering.PostProcessing.AmbientOcclusion
     - UnityEngine.Rendering.PostProcessing.AutoExposure
@@ -53,6 +56,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -100,7 +104,12 @@ ScriptsOnlyBuild:
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.SpriteState
   methodsToPreserve: []
   sceneClasses:
     Assets/Shmup.unity:
@@ -141,55 +150,63 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1652}
+      Script: {instanceID: 1594}
     - Class: 114
-      Script: {instanceID: 1878}
+      Script: {instanceID: 1658}
     - Class: 114
-      Script: {instanceID: 1898}
+      Script: {instanceID: 1884}
     - Class: 114
-      Script: {instanceID: 2172}
+      Script: {instanceID: 1904}
     - Class: 114
-      Script: {instanceID: 2382}
+      Script: {instanceID: 2178}
     - Class: 114
-      Script: {instanceID: 2490}
+      Script: {instanceID: 2388}
     - Class: 114
-      Script: {instanceID: 2506}
+      Script: {instanceID: 2496}
     - Class: 114
-      Script: {instanceID: 2604}
+      Script: {instanceID: 2512}
     - Class: 114
       Script: {instanceID: 2610}
     - Class: 114
-      Script: {instanceID: 2642}
+      Script: {instanceID: 2616}
     - Class: 114
-      Script: {instanceID: 2764}
+      Script: {instanceID: 2648}
     - Class: 114
-      Script: {instanceID: 2768}
+      Script: {instanceID: 2770}
     - Class: 114
-      Script: {instanceID: 2950}
+      Script: {instanceID: 2774}
     - Class: 114
-      Script: {instanceID: 3094}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 3102}
+      Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3314}
+      Script: {instanceID: 3100}
     - Class: 114
-      Script: {instanceID: 3346}
+      Script: {instanceID: 3108}
     - Class: 114
-      Script: {instanceID: 3592}
+      Script: {instanceID: 3320}
     - Class: 114
-      Script: {instanceID: 3654}
+      Script: {instanceID: 3352}
     - Class: 114
-      Script: {instanceID: 3886}
+      Script: {instanceID: 3598}
     - Class: 114
-      Script: {instanceID: 4008}
+      Script: {instanceID: 3660}
     - Class: 114
-      Script: {instanceID: 4234}
+      Script: {instanceID: 3890}
     - Class: 114
-      Script: {instanceID: 4262}
+      Script: {instanceID: 3900}
     - Class: 114
-      Script: {instanceID: 4506}
+      Script: {instanceID: 4014}
     - Class: 114
-      Script: {instanceID: 4648}
+      Script: {instanceID: 4264}
+    - Class: 114
+      Script: {instanceID: 4508}
+    - Class: 114
+      Script: {instanceID: 4650}
+    - Class: 114
+      Script: {instanceID: 22008}
+    - Class: 114
+      Script: {instanceID: 26390}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -208,11 +225,31 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 7f09568b1e7d34cf47bf17573ec62571
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Detonator
+  - hash:
+      serializedVersion: 2
+      Hash: c3c43b8317a702fdc8f881a531c9b5df
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DetonatorHeatwave
+  - hash:
+      serializedVersion: 2
+      Hash: 0cac0763b18efbd087a3496f9fe90965
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DetonatorBurstEmitter
   - hash:
       serializedVersion: 2
       Hash: 55060a7bf226ac385ce19ebd450f199f
@@ -545,13 +582,13 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 6e1ea89d313bff9d56ab2e684309218f
+      Hash: 2f1642b8691627e485e6c5c42395ab53
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Player
   - hash:
       serializedVersion: 2
-      Hash: 04b0d32f2352cd1d22df4738c16e7b6c
+      Hash: 4b140b69f34df1780e8a96c2b5999fd9
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ExperienceManager
@@ -605,7 +642,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 5b9609b93ab9747ee0bcf2be56a0da86
+      Hash: c9bf38d8342466bd7e441203fa9448c4
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -713,12 +750,6 @@ ScriptsOnlyBuild:
     className: TakeDamageCamera
   - hash:
       serializedVersion: 2
-      Hash: 0cac0763b18efbd087a3496f9fe90965
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: DetonatorBurstEmitter
-  - hash:
-      serializedVersion: 2
       Hash: 4728e3d21cc2a12e391e71ec9b7eed0b
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -759,6 +790,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: PostProcessProfile
+  - hash:
+      serializedVersion: 2
+      Hash: 5520c816c5997fae243ba69bab18a63e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerHealth
   - hash:
       serializedVersion: 2
       Hash: 429ce0b58f9d2275bbc4ed740bee78ec
@@ -815,12 +852,6 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: c3c43b8317a702fdc8f881a531c9b5df
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: DetonatorHeatwave
-  - hash:
-      serializedVersion: 2
       Hash: e7e95903ca66d58e1a7cbd71f824e16d
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -837,12 +868,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: MotionBlur
-  - hash:
-      serializedVersion: 2
-      Hash: 7f09568b1e7d34cf47bf17573ec62571
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Detonator
   - hash:
       serializedVersion: 2
       Hash: fb91b0f531b5adecb53c856ab1c2f0aa
@@ -921,6 +946,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: AmbientOcclusion
+  - hash:
+      serializedVersion: 2
+      Hash: 320d4b2a1ed03afd5e546a81cbeeb010
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UpgradeManager
+  - hash:
+      serializedVersion: 2
+      Hash: e6d4ec7055daad4daa86ccda36550973
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: EnemySpawner
   platform: 19
   scenePathNames:
   - Assets/Shmup.unity

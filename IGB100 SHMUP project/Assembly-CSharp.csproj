@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\System\DetonatorForce.cs" />
+    <Compile Include="Assets\Scripts\UpgradeManager.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\System\DetonatorFireball.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\System\DetonatorHeatwave.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -81,9 +82,11 @@
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\System\Detonator.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\System\DetonatorShockwave.cs" />
+    <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\ExperienceManager.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\System\DetonatorSpray.cs" />
     <Compile Include="Assets\Scripts\TakeDamagePostProccessing.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\RotateSkyBox.cs" />
     <Compile Include="Assets\Scripts\Parts.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\TestScene\DetonatorTest.cs" />

@@ -7,11 +7,9 @@ using TMPro;
 public class ExperienceManager : MonoBehaviour
 {
     [Header("Experience")]
-    [SerializeField] AnimationCurve experienceCurve;
 
-    int currentLevel, totalExperience;
-    int previousLevelsExpereience;
-    int nextLevelsExperience = 10;
+    int currentLevel, currentExperience, overFlow;
+    int maxExperience = 10;
 
     [Header("Interface")]
     [SerializeField] TextMeshProUGUI levelText;
@@ -32,35 +30,33 @@ public class ExperienceManager : MonoBehaviour
 
     public void addExperience(int xpGained)
     {
-        Debug.Log(xpGained);
-        totalExperience += xpGained;
-        Debug.Log(totalExperience);
+        currentExperience += xpGained;
         checkForLevelUp();
         updateInterface();
     }
 
     void checkForLevelUp()
     {
-        if(totalExperience >= nextLevelsExperience)
+        if(currentExperience >= maxExperience)
         {
             currentLevel++;
             updateLevel();
-            //add level up system
-
+            GameManager.instance.Upgrade();
         }
     }
 
     void updateLevel()
     {
-        previousLevelsExpereience = (int)experienceCurve.Evaluate(currentLevel);
-        nextLevelsExperience = (int)experienceCurve.Evaluate(currentLevel + 1);
+        
+        currentExperience -= maxExperience;
+        maxExperience += 5;
         updateInterface();
     }
 
     void updateInterface()
     {
-        int start = totalExperience - previousLevelsExpereience;
-        int end = nextLevelsExperience - previousLevelsExpereience;
+        int start = currentExperience;
+        int end = maxExperience;
 
         levelText.text = currentLevel.ToString();
         experienceText.text = start + " parts / " + end + " parts";

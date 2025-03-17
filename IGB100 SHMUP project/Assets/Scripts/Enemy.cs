@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 using Vector3 = UnityEngine.Vector3;
 using Quaternion = UnityEngine.Quaternion;
+using System.Security.Cryptography;
 
 public class Enemy : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         Move();
+        
         if(canShoot == true)
         {
             Shoot();
@@ -43,6 +45,10 @@ public class Enemy : MonoBehaviour
         if(GameManager.instance.Player)
             transform.LookAt(GameManager.instance.Player.transform.position);
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        if(transform.position.y != 0)
+        {
+            transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
+        }
     }
 
     public void takeDamage(float damage)

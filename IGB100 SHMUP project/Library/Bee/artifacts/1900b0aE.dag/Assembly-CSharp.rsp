@@ -361,14 +361,17 @@
 "Assets/Effects/Detonator Explosion Framework/TestScene/DetonatorTest.cs"
 "Assets/Effects/Detonator Explosion Framework/TestScene/TouchToMouse.cs"
 "Assets/Scripts/Enemy.cs"
+"Assets/Scripts/EnemySpawner.cs"
 "Assets/Scripts/ExperienceManager.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Parts.cs"
 "Assets/Scripts/Player.cs"
+"Assets/Scripts/PlayerHealth.cs"
 "Assets/Scripts/Projectile.cs"
 "Assets/Scripts/RotateSkyBox.cs"
 "Assets/Scripts/TakeDamageCamera.cs"
 "Assets/Scripts/TakeDamagePostProccessing.cs"
+"Assets/Scripts/UpgradeManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+
