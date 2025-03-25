@@ -19,6 +19,9 @@ public class EnemySpawner : MonoBehaviour
     public float sceInterval = 2f;
     public float fceInterval = 10f;
     public float sseInterval = 5f;
+    public float sceSpawnTime = 0f;
+    public float fceSpawnTime = 120f;
+    public float sseSpawnTime = 60f;
 
     public float upperX;
     public float lowerX;
@@ -28,21 +31,23 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnEnemy(sceInterval, slowCrawlEnemy));
-        StartCoroutine(spawnEnemy(fceInterval, fastCrawlEnemy));
-        StartCoroutine(spawnEnemy(sseInterval, slowShootEnemy));
+        StartCoroutine(spawnEnemy(sceInterval, slowCrawlEnemy, sceSpawnTime));
+        StartCoroutine(spawnEnemy(fceInterval, fastCrawlEnemy, fceSpawnTime));
+        StartCoroutine(spawnEnemy(sseInterval, slowShootEnemy, sseSpawnTime));
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
     
-    public IEnumerator spawnEnemy(float interval, GameObject enemy)
+    public IEnumerator spawnEnemy(float interval, GameObject enemy, float spawntime)
     {
         yield return new WaitForSeconds (interval + Random.Range(0f,5f));
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(lowerX,upperX), 0f, Random.Range(lowerZ, upperZ)), Quaternion.identity);
-        StartCoroutine(spawnEnemy(interval, enemy));
+        if(GameManager.instance.secondsCount >= spawntime)
+        {
+            GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(lowerX,upperX), 0f, Random.Range(lowerZ, upperZ)), Quaternion.identity);
+        }
+        StartCoroutine(spawnEnemy(interval, enemy, spawntime));
     }
 }

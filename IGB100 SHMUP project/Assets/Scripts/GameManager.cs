@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
     public float xBoundary = 30;
     public float zBoundary = 30;
+    public float secondsCount;
     public GameObject Player;
     public Player playerScript;
     public bool gameIsPaused = false;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour {
     public Button choiceTwo;
     public Button choiceThree;
     public UpgradeManager upgradeManag;
+    public AudioSource enemyExplosion;
 
     // Awake Checks - Singleton setup
     void Awake() {
@@ -38,6 +40,12 @@ public class GameManager : MonoBehaviour {
 		btn2.onClick.AddListener(UpgradeDamage);
         Button btn3 = choiceThree.GetComponent<Button>();
 		btn3.onClick.AddListener(UpgradeSpeed);
+        enemyExplosion = GetComponent<AudioSource>();
+    }
+
+    public void Update()
+    {
+        secondsCount += Time.deltaTime;
     }
 
     public void Upgrade()
@@ -87,8 +95,13 @@ public class GameManager : MonoBehaviour {
     {
         while(Time.timeScale < 1)
         {
-            Time.timeScale += 0.005f;
+            Time.timeScale += 0.05f;
             yield return null;
         }
+    }
+
+    public void playEnemyExplosion()
+    {
+        enemyExplosion.Play(0);
     }
 }

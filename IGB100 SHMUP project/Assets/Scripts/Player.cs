@@ -6,6 +6,8 @@ using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 using Debug = UnityEngine.Debug;
 using Quaternion = UnityEngine.Quaternion;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class Player : MonoBehaviour
     public float attack = 10f;
     public float attackSpeed = 5f;
     public float attackTime;
+    private AudioSource gunShoot;
 
     //other
     private UnityEngine.Vector3 position;
@@ -30,7 +33,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gunShoot = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,6 +64,7 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKey("space") && Time.time > attackTime)
         {
+            gunShoot.Play(0);
             GameObject playerBullet = Instantiate(projectile, transform.position, transform.rotation);
             playerBullet.GetComponent<Projectile>().damage = attack;
             playerBullet.GetComponent<Projectile>().playerShooting = true;
@@ -93,6 +97,8 @@ public class Player : MonoBehaviour
         if(health <= 0)
         {
             Destroy(this.gameObject);
+            //temporary respawn script
+            SceneManager.LoadScene(0);
         }
     }
     

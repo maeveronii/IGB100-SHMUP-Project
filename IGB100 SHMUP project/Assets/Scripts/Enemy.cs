@@ -57,11 +57,13 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0)
         {
+            GameManager.instance.playEnemyExplosion();
             Destroy(this.gameObject);
             Instantiate(deathEffect, transform.position, transform.rotation);
             Instantiate(parts, transform.position, transform.rotation);
         }
     }
+
 
     private void Shoot()
     {
