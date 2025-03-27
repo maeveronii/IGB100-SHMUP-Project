@@ -59,7 +59,7 @@
     <UnityVersion>2022.3.40f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\maeve\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\User\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.40f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.40f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -86,10 +86,13 @@
     <Compile Include="Assets\Scripts\ExperienceManager.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\System\DetonatorSpray.cs" />
     <Compile Include="Assets\Scripts\TakeDamagePostProccessing.cs" />
+    <Compile Include="Assets\Scripts\LittleFella.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\RotateSkyBox.cs" />
     <Compile Include="Assets\Scripts\Parts.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\TestScene\DetonatorTest.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\System\DetonatorSmoke.cs" />
     <Compile Include="Assets\Effects\Detonator Explosion Framework\TestScene\TouchToMouse.cs" />
   </ItemGroup>

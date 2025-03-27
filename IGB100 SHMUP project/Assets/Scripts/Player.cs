@@ -6,7 +6,6 @@ using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 using Debug = UnityEngine.Debug;
 using Quaternion = UnityEngine.Quaternion;
-using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour

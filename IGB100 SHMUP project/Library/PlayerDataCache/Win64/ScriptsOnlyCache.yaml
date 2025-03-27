@@ -6,14 +6,17 @@ ScriptsOnlyBuild:
     - EnemySpawner
     - ExperienceManager
     - GameManager
+    - MainMenu
     - Parts
     - Player
     - PlayerHealth
     - Projectile
     - RotateSkyBox
+    - SettingsMenu
     - TakeDamageCamera
     - TakeDamagePostProccessing
     - UpgradeManager
+    - littleFella
     Unity.Postprocessing.Runtime.dll:
     - UnityEngine.Rendering.PostProcessing.AmbientOcclusion
     - UnityEngine.Rendering.PostProcessing.AutoExposure
@@ -38,6 +41,8 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     Unity.TextMeshPro.dll:
+    - TMPro.TMP_ColorGradient
+    - TMPro.TMP_Dropdown
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
@@ -60,6 +65,11 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Slider
+    - UnityEngine.UI.Toggle
   serializedClasses:
     Unity.Postprocessing.Runtime:
     - UnityEngine.Rendering.PostProcessing.BoolParameter
@@ -86,6 +96,9 @@ ScriptsOnlyBuild:
     - TMPro.FontAssetCreationSettings
     - TMPro.KerningTable
     - TMPro.TMP_Character
+    - TMPro.TMP_Dropdown/DropdownEvent
+    - TMPro.TMP_Dropdown/OptionData
+    - TMPro.TMP_Dropdown/OptionDataList
     - TMPro.TMP_FontFeatureTable
     - TMPro.TMP_FontWeightPair
     - TMPro.TMP_GlyphAdjustmentRecord
@@ -97,7 +110,9 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Style
     - TMPro.VertexGradient
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
@@ -109,10 +124,38 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
+    - UnityEngine.UI.ScrollRect/ScrollRectEvent
+    - UnityEngine.UI.Scrollbar/ScrollEvent
+    - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
-  methodsToPreserve: []
+    - UnityEngine.UI.Toggle/ToggleEvent
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenu
+    methodName: PlayGame
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: setQuality
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: setVolume
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenu
+    methodName: QuitGame
   sceneClasses:
-    Assets/Shmup.unity:
+    Assets/Main Menu.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -135,11 +178,110 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1658}
+    - Class: 114
+      Script: {instanceID: 1754}
+    - Class: 114
+      Script: {instanceID: 1808}
+    - Class: 114
+      Script: {instanceID: 1884}
+    - Class: 114
+      Script: {instanceID: 2178}
+    - Class: 114
+      Script: {instanceID: 2498}
+    - Class: 114
+      Script: {instanceID: 2612}
+    - Class: 114
+      Script: {instanceID: 2620}
+    - Class: 114
+      Script: {instanceID: 2650}
+    - Class: 114
+      Script: {instanceID: 2772}
+    - Class: 114
+      Script: {instanceID: 2958}
+    - Class: 114
+      Script: {instanceID: 2968}
+    - Class: 114
+      Script: {instanceID: 3062}
+    - Class: 114
+      Script: {instanceID: 3602}
+    - Class: 114
+      Script: {instanceID: 3780}
+    - Class: 114
+      Script: {instanceID: 3916}
+    - Class: 114
+      Script: {instanceID: 3926}
+    - Class: 114
+      Script: {instanceID: 4018}
+    - Class: 114
+      Script: {instanceID: 4268}
+    - Class: 114
+      Script: {instanceID: 25354}
+    - Class: 114
+      Script: {instanceID: 27682}
+    - Class: 114
+      Script: {instanceID: 36510}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    Assets/Shmup.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 72
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -158,60 +300,52 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1904}
     - Class: 114
-      Script: {instanceID: 2178}
-    - Class: 114
       Script: {instanceID: 2388}
     - Class: 114
-      Script: {instanceID: 2496}
+      Script: {instanceID: 2488}
     - Class: 114
-      Script: {instanceID: 2512}
+      Script: {instanceID: 2498}
     - Class: 114
-      Script: {instanceID: 2610}
+      Script: {instanceID: 2514}
     - Class: 114
-      Script: {instanceID: 2616}
+      Script: {instanceID: 2612}
     - Class: 114
-      Script: {instanceID: 2648}
+      Script: {instanceID: 2618}
     - Class: 114
-      Script: {instanceID: 2770}
+      Script: {instanceID: 2650}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 2956}
+      Script: {instanceID: 2776}
     - Class: 114
-      Script: {instanceID: 3060}
+      Script: {instanceID: 2958}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3108}
+      Script: {instanceID: 3102}
     - Class: 114
-      Script: {instanceID: 3320}
+      Script: {instanceID: 3110}
     - Class: 114
-      Script: {instanceID: 3352}
+      Script: {instanceID: 3322}
     - Class: 114
-      Script: {instanceID: 3598}
+      Script: {instanceID: 3344}
     - Class: 114
-      Script: {instanceID: 3660}
+      Script: {instanceID: 3356}
     - Class: 114
-      Script: {instanceID: 3890}
+      Script: {instanceID: 3602}
     - Class: 114
-      Script: {instanceID: 3900}
+      Script: {instanceID: 3664}
     - Class: 114
-      Script: {instanceID: 4014}
+      Script: {instanceID: 3894}
     - Class: 114
-      Script: {instanceID: 4264}
+      Script: {instanceID: 3904}
     - Class: 114
-      Script: {instanceID: 4508}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 4650}
-    - Class: 114
-      Script: {instanceID: 22008}
-    - Class: 114
-      Script: {instanceID: 26390}
+      Script: {instanceID: 4654}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -424,6 +558,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: PostProcessLayer
+  - hash:
+      serializedVersion: 2
+      Hash: 320d4b2a1ed03afd5e546a81cbeeb010
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UpgradeManager
   - hash:
       serializedVersion: 2
       Hash: 540882762544409cc4530e60db00e951
@@ -642,7 +782,13 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: c9bf38d8342466bd7e441203fa9448c4
+      Hash: 94e64010491a76ff3580bec2dd136bd1
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: EnemySpawner
+  - hash:
+      serializedVersion: 2
+      Hash: f35810a69986de298c35977df118551a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -792,7 +938,7 @@ ScriptsOnlyBuild:
     className: PostProcessProfile
   - hash:
       serializedVersion: 2
-      Hash: 5520c816c5997fae243ba69bab18a63e
+      Hash: 4d510b3df5075fa9a553cca3b60b8b92
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerHealth
@@ -948,18 +1094,25 @@ ScriptsOnlyBuild:
     className: AmbientOcclusion
   - hash:
       serializedVersion: 2
-      Hash: 320d4b2a1ed03afd5e546a81cbeeb010
+      Hash: fe4c75203a9743390fe41454f7d841d0
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: UpgradeManager
+    className: MainMenu
   - hash:
       serializedVersion: 2
-      Hash: e6d4ec7055daad4daa86ccda36550973
+      Hash: 8910365be31a4726c9bcfc3175f66046
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: EnemySpawner
+    className: SettingsMenu
+  - hash:
+      serializedVersion: 2
+      Hash: 80e8c654672b816f427d27c8c6daf5e8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: littleFella
   platform: 19
   scenePathNames:
+  - Assets/Main Menu.unity
   - Assets/Shmup.unity
   playerPath: C:/Users/User/Documents/GitHub/IGB100-SHMUP-Project/IGB100 SHMUP project/build/IGB100
     G1.exe
