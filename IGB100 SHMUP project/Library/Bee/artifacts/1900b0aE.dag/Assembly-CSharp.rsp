@@ -371,6 +371,7 @@
 "Assets/Scripts/PlayerHealth.cs"
 "Assets/Scripts/Projectile.cs"
 "Assets/Scripts/RotateSkyBox.cs"
+"Assets/Scripts/Satellite.cs"
 "Assets/Scripts/SettingsMenu.cs"
 "Assets/Scripts/TakeDamageCamera.cs"
 "Assets/Scripts/TakeDamagePostProccessing.cs"

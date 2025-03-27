@@ -12,18 +12,18 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Image healthFill;
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI timeSurvived;
-    public float distanceToSatellite = 3000;
+    public float distanceToSatellite = 3600;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("updateTimeSurvived");
     }
 
     // Update is called once per frame
     void Update()
     {
-        updateTimeSurvived();
+
     }
 
     public void updateHealth(float currentHealth, float maxHealth)
@@ -35,10 +35,12 @@ public class PlayerHealth : MonoBehaviour
         healthFill.fillAmount = (float)currentHealth / (float)maxHealth;
     }
 
-    public void updateTimeSurvived()
+    public IEnumerator updateTimeSurvived()
     {
-        distanceToSatellite -= (Time.deltaTime * 10);
-        distanceToSatellite = Mathf.Ceil(distanceToSatellite * 10.0f) * 0.1f;
+        distanceToSatellite -= 2;
         timeSurvived.text = "Meters to satellite: " + distanceToSatellite + "km";
+        yield return new WaitForSeconds(0.1f);
+        StartCoroutine("updateTimeSurvived");
+
     }
 }

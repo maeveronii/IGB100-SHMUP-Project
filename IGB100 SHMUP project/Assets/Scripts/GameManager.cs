@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Resources;
 
 public class GameManager : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour {
     public float secondsCount;
     public GameObject Player;
     public Player playerScript;
+    public Satellite satelliteScript;
     public bool gameIsPaused = false;
     public Button choiceOne;
     public Button choiceTwo;
@@ -46,6 +48,10 @@ public class GameManager : MonoBehaviour {
     public void Update()
     {
         secondsCount += Time.deltaTime;
+        if(secondsCount >= 180)
+        {
+            satelliteScript.SatelliteWin();
+        }
     }
 
     public void Upgrade()
