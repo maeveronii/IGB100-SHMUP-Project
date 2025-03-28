@@ -41,4 +41,9 @@ public class UpgradeManager : MonoBehaviour
         yield return null;
 
     }
+
+    public void TurnOff()
+    {
+        this.enabled = false;
+    }
 }

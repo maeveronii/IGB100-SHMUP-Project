@@ -105,4 +105,10 @@ public class Player : MonoBehaviour
     {
         experienceManag.addExperience(xpGained);
     }
+
+    public void TurnOff()
+    {
+        GetComponent<Rigidbody>().velocity = new Vector3(0,0,0) * 0 * Time.fixedDeltaTime;
+        this.enabled = false;
+    }
 }

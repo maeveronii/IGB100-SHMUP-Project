@@ -27,4 +27,9 @@ public class Parts : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void TurnOff()
+    {
+        this.enabled = false;
+    }
 }

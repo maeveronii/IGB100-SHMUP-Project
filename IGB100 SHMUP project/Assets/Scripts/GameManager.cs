@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
     public GameObject Player;
     public Player playerScript;
     public Satellite satelliteScript;
+    public WinPanel winScript;
+    public EnemySpawner spawnerScript;
     public bool gameIsPaused = false;
     public Button choiceOne;
     public Button choiceTwo;
@@ -36,21 +38,28 @@ public class GameManager : MonoBehaviour {
 
     public void Start()
     {
-        Button btn1 = choiceOne.GetComponent<Button>();
+        /*Button btn1 = choiceOne.GetComponent<Button>();
 		btn1.onClick.AddListener(UpgradeHealth);
         Button btn2 = choiceTwo.GetComponent<Button>();
 		btn2.onClick.AddListener(UpgradeDamage);
         Button btn3 = choiceThree.GetComponent<Button>();
-		btn3.onClick.AddListener(UpgradeSpeed);
+		btn3.onClick.AddListener(UpgradeSpeed);*/
         enemyExplosion = GetComponent<AudioSource>();
     }
 
     public void Update()
     {
         secondsCount += Time.deltaTime;
-        if(secondsCount >= 180)
+        if(secondsCount >= 170)
         {
             satelliteScript.SatelliteWin();
+            upgradeManag.TurnOff();
+            playerScript.TurnOff();
+            spawnerScript.TurnOff();
+        }
+        if(secondsCount >= 170 && secondsCount <= 170.01)
+        {
+            winScript.winStart2();
         }
     }
 

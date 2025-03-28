@@ -39,6 +39,10 @@ public class PlayerHealth : MonoBehaviour
     {
         distanceToSatellite -= 2;
         timeSurvived.text = "Meters to satellite: " + distanceToSatellite + "km";
+        if(distanceToSatellite == 0)
+        {
+            timeSurvived.text = "Meters to satellite: 0km";
+        }
         yield return new WaitForSeconds(0.1f);
         StartCoroutine("updateTimeSurvived");
 

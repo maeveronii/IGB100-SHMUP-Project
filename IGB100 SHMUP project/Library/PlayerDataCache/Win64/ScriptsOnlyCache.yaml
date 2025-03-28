@@ -12,10 +12,12 @@ ScriptsOnlyBuild:
     - PlayerHealth
     - Projectile
     - RotateSkyBox
+    - Satellite
     - SettingsMenu
     - TakeDamageCamera
     - TakeDamagePostProccessing
     - UpgradeManager
+    - WinPanel
     - littleFella
     Unity.Postprocessing.Runtime.dll:
     - UnityEngine.Rendering.PostProcessing.AmbientOcclusion
@@ -180,6 +182,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -187,49 +193,49 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1656}
+      Script: {instanceID: 1652}
     - Class: 114
-      Script: {instanceID: 1752}
+      Script: {instanceID: 1748}
     - Class: 114
-      Script: {instanceID: 1806}
+      Script: {instanceID: 1802}
     - Class: 114
-      Script: {instanceID: 1882}
+      Script: {instanceID: 1878}
     - Class: 114
-      Script: {instanceID: 2176}
+      Script: {instanceID: 2174}
     - Class: 114
-      Script: {instanceID: 2496}
+      Script: {instanceID: 2494}
     - Class: 114
-      Script: {instanceID: 2610}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2616}
     - Class: 114
-      Script: {instanceID: 2648}
+      Script: {instanceID: 2646}
     - Class: 114
-      Script: {instanceID: 2770}
+      Script: {instanceID: 2768}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 2958}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 2968}
+      Script: {instanceID: 2966}
     - Class: 114
-      Script: {instanceID: 3046}
+      Script: {instanceID: 3044}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3604}
+      Script: {instanceID: 3602}
     - Class: 114
-      Script: {instanceID: 3784}
+      Script: {instanceID: 3782}
     - Class: 114
-      Script: {instanceID: 3914}
+      Script: {instanceID: 3912}
     - Class: 114
-      Script: {instanceID: 3922}
+      Script: {instanceID: 3920}
     - Class: 114
-      Script: {instanceID: 3932}
+      Script: {instanceID: 3930}
     - Class: 114
-      Script: {instanceID: 4024}
+      Script: {instanceID: 4022}
     - Class: 114
-      Script: {instanceID: 4278}
+      Script: {instanceID: 4276}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -245,6 +251,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
     - Class: 241
       Script: {instanceID: 0}
@@ -292,57 +300,61 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1656}
+      Script: {instanceID: 1652}
     - Class: 114
-      Script: {instanceID: 1882}
+      Script: {instanceID: 1878}
     - Class: 114
-      Script: {instanceID: 1902}
+      Script: {instanceID: 1898}
     - Class: 114
-      Script: {instanceID: 2386}
+      Script: {instanceID: 1952}
     - Class: 114
-      Script: {instanceID: 2486}
+      Script: {instanceID: 2384}
     - Class: 114
-      Script: {instanceID: 2496}
+      Script: {instanceID: 2484}
     - Class: 114
-      Script: {instanceID: 2512}
+      Script: {instanceID: 2494}
     - Class: 114
-      Script: {instanceID: 2610}
+      Script: {instanceID: 2510}
     - Class: 114
-      Script: {instanceID: 2616}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 2648}
+      Script: {instanceID: 2614}
     - Class: 114
-      Script: {instanceID: 2770}
+      Script: {instanceID: 2646}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2768}
     - Class: 114
-      Script: {instanceID: 2958}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 3104}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3112}
+      Script: {instanceID: 3102}
     - Class: 114
-      Script: {instanceID: 3324}
+      Script: {instanceID: 3110}
     - Class: 114
-      Script: {instanceID: 3346}
+      Script: {instanceID: 3322}
     - Class: 114
-      Script: {instanceID: 3358}
+      Script: {instanceID: 3344}
     - Class: 114
-      Script: {instanceID: 3604}
+      Script: {instanceID: 3356}
     - Class: 114
-      Script: {instanceID: 3666}
+      Script: {instanceID: 3602}
     - Class: 114
-      Script: {instanceID: 3898}
+      Script: {instanceID: 3664}
     - Class: 114
-      Script: {instanceID: 3908}
+      Script: {instanceID: 3896}
     - Class: 114
-      Script: {instanceID: 4250}
+      Script: {instanceID: 3906}
     - Class: 114
-      Script: {instanceID: 4522}
+      Script: {instanceID: 4248}
     - Class: 114
-      Script: {instanceID: 4664}
+      Script: {instanceID: 4520}
+    - Class: 114
+      Script: {instanceID: 4662}
+    - Class: 114
+      Script: {instanceID: 21356}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -352,6 +364,8 @@ ScriptsOnlyBuild:
     - Class: 196
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 215
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -474,6 +488,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: DepthOfField
+  - hash:
+      serializedVersion: 2
+      Hash: cfd3a0d9908bd7ce5842a352632b616f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Satellite
   - hash:
       serializedVersion: 2
       Hash: a1d007c8ffccfd45d68cff2e02e813a8
@@ -782,7 +802,7 @@ ScriptsOnlyBuild:
     className: EnemySpawner
   - hash:
       serializedVersion: 2
-      Hash: f35810a69986de298c35977df118551a
+      Hash: efe4869f9dea2716e05b959497efb5fb
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -1110,6 +1130,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: AmbientOcclusion
+  - hash:
+      serializedVersion: 2
+      Hash: 3220128357b4781201bf53293ea10763
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: WinPanel
   platform: 19
   scenePathNames:
   - Assets/Main Menu.unity

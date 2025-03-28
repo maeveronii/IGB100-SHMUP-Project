@@ -37,6 +37,11 @@ public class Enemy : MonoBehaviour
         {
             Shoot();
         }
+
+        if(GameManager.instance.secondsCount >= 170)
+        {
+            Destroy(this);   
+        }
     }
 
     //Enemy Movement - Move towards the player

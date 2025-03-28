@@ -376,6 +376,7 @@
 "Assets/Scripts/TakeDamageCamera.cs"
 "Assets/Scripts/TakeDamagePostProccessing.cs"
 "Assets/Scripts/UpgradeManager.cs"
+"Assets/Scripts/WinPanel.cs"
 -langversion:9.0
 /deterministic
 /optimize+

@@ -50,4 +50,9 @@ public class EnemySpawner : MonoBehaviour
         }
         StartCoroutine(spawnEnemy(interval, enemy, spawntime));
     }
+
+    public void TurnOff()
+    {
+        this.enabled = false;
+    }
 }
